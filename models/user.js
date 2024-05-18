@@ -1,0 +1,11 @@
+const mongoose = require("mongoose");
+
+const userSchema = new mongoose.Schema({
+  username: String,
+  email: String,
+  role: { type: String, enum: ["influencer", "brand"] },
+  password: String, // Will store hashed password
+  // Add more fields as needed
+});
+
+module.exports = mongoose.model("User", userSchema);
